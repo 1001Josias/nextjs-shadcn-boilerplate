@@ -6,13 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "vitest",
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "stylelint-staged": "stylelint"
   },
   "pre-commit": "lint",
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "lint",
+    "**/*.{js,jsx,ts,tsx}": [
+      "lint",
+      "test"
+    ],
     "*.css": "stylelint-staged"
   },
   "dependencies": {
@@ -32,10 +36,12 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.3",
     "eslint-config-prettier": "^9.1.0",
+    "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "postcss": "^8",
     "pre-commit": "^1.2.2",
@@ -43,6 +49,7 @@
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^1.3.1"
   }
 }
