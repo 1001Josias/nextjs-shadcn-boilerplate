@@ -7,15 +7,18 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest --coverage",
+    "test:coverage": "vitest run --coverage",
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "stylelint-staged": "stylelint"
   },
-  "pre-commit": "lint",
+  "pre-commit": [
+    "lint",
+    "test:coverage"
+  ],
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "lint",
-      "test"
+      "lint"
     ],
     "*.css": "stylelint-staged"
   },
