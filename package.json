@@ -10,15 +10,18 @@
     "test:coverage": "vitest run --coverage",
     "lint": "next lint",
     "lint-staged": "lint-staged",
+    "prettier": "prettier --write .",
     "stylelint-staged": "stylelint"
   },
   "pre-commit": [
     "lint",
+    "prettier",
     "test:coverage"
   ],
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "lint"
+      "lint",
+      "prettier"
     ],
     "*.css": "stylelint-staged"
   },
