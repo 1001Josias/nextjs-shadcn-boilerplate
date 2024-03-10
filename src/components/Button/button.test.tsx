@@ -19,9 +19,9 @@ suite('Button Component Tests', () => {
   })
 
   test('should be rendered Slot when a Child is true', () => {
-    const { container } = render(<Button asChild>Nextjs</Button>)
-    const slotElement = container.querySelector('[data-slot]')
-    expect(slotElement).toBeDefined()
+    render(<Button asChild>Nextjs</Button>)
+    const element = document.querySelector('button')
+    expect(element).toBeNull()
   })
 
   test('should be rendered the button when asChild is false', () => {
