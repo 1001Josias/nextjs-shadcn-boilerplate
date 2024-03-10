@@ -8,5 +8,7 @@ export default defineConfig({
     alias: {
       '@': '/src',
     },
+    globals: true,
+    setupFiles: 'vitest.setup.ts',
   },
 })
